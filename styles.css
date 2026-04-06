@@ -1,0 +1,67 @@
+html, body {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.contenedor {
+    display: grid;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    height: 100%;           /* Altura total de la pantalla */
+}
+
+.imagen_tierra{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.contenedor p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
+    animation: aparecer both;
+    animation-timeline: scroll();
+}
+
+main{
+    flex: 1;
+}
+
+footer{
+    color: #ffffff;
+    background-color: #00008B;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    animation: aparecer both;
+    animation-timeline: scroll();
+    box-sizing: border-box;
+}
+
+
+@keyframes aparecer{
+    0%{
+        opacity: 0;
+        mix-blend-mode: saturation;
+        filter: grayscale();
+        translate: 0 -20%;
+        scale: .8;
+    }
+
+    100%{
+        opacity: 1;
+        filter: grayscale();
+        translate: 0 0;
+        scale: 1;
+    }
+}
